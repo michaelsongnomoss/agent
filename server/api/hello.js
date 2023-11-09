@@ -61,6 +61,7 @@ export default defineEventHandler(async (event) => {
   
 
         const response = await llmChain.call({ input: prompt });
+        return response;
 
       } catch (err) {
         console.log(err)
