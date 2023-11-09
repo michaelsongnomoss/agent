@@ -52,20 +52,20 @@ export default defineEventHandler(async (event) => {
 
       const pineconeResponse = await vectorChain.call({ query });
 
-      try {
-        const prompt = `
-              CONTEXT: ${JSON.stringify(pineconeResponse)}
+      // try {
+      //   const prompt = `
+      //         CONTEXT: ${JSON.stringify(pineconeResponse)}
               
-              QUESTION: ${query}
-              `;
+      //         QUESTION: ${query}
+      //         `;
   
 
-        const response = await llmChain.call({ input: prompt });
-        // return response;
+      //   const response = await llmChain.call({ input: prompt });
+      //   // return response;
 
-      } catch (err) {
-        console.log(err)
-      }
+      // } catch (err) {
+      //   console.log(err)
+      // }
 
       return { pineconeResponse };
 
